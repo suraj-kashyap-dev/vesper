@@ -1,0 +1,23 @@
+@import 'tailwindcss' source(none);
+@import '../../../../../vendor/filament/filament/resources/css/index.css';
+
+@source '../views/**/*.blade.php';
+@source '../../**/*.php';
+
+/*
+ * Vesper is the panel theme and loads LAST, so it must own the authoritative,
+ * correctly-ordered utility set for the whole panel. Scanning every module src
+ * (blade + php) here prevents earlier per-module bundles from clobbering
+ * responsive variants via cross-bundle layer source order. Globs target the
+ * src directory only, to skip each module node_modules and dist folders.
+ */
+@source '../../../../*/src/**/*.blade.php';
+@source '../../../../*/src/**/*.php';
+@import './base.css';
+@import './layout.css';
+@import './buttons.css';
+@import './forms.css';
+@import './cards.css';
+@import './tables.css';
+@import './overlays.css';
+@import './utilities.css';

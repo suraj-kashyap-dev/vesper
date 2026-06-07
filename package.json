@@ -1,0 +1,15 @@
+{
+  "name": "@suraj-kashyap-dev/vesper",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:css": "tailwindcss -i ./resources/css/theme.css -o ./dist/vesper.css --minify",
+    "publish:assets": "php ../artisan filament:assets",
+    "build": "npm run build:css && npm run publish:assets",
+    "dev": "tailwindcss -i ./resources/css/theme.css -o ./dist/vesper.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

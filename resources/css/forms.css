@@ -1,0 +1,473 @@
+.fi-fo-field,
+.fi-fo-field-content-col,
+.fi-fo-field-content,
+.fi-fo-field-content-ctn {
+    min-width: 0;
+}
+
+.fi-fo-field {
+    gap: 0.65rem;
+}
+
+.fi-fo-field-label-col {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.fi-fo-field-label {
+    color: var(--vs-text-3);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.fi-fo-field-label-content {
+    color: inherit;
+}
+
+.fi-fo-field-label-required-mark {
+    color: var(--vs-danger);
+}
+
+.fi-fo-field-wrp-error-list {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.fi-fo-field-wrp-error-message,
+.fi-fo-file-upload-error-message,
+.fi-fo-rich-editor-file-validation-message {
+    margin-top: 0.35rem;
+    color: var(--vs-danger);
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.fi-input-wrp {
+    border: 1px solid var(--vs-border);
+    border-radius: var(--vs-control-radius);
+    background: var(--vs-panel-surface);
+    box-shadow: none;
+    transition: var(--vs-transition);
+}
+
+.fi-input-wrp:not(.fi-disabled):hover {
+    border-color: var(--vs-border-strong);
+    background: var(--vs-control-bg);
+}
+
+/*
+ * Light mode: the page background and the input surface are both near-white, and
+ * the default 7% border all but vanishes — fields become unreadable. Give inputs a
+ * crisp white fill and a clearly visible border so their boundaries stand out.
+ */
+html:not(.dark) .fi-input-wrp {
+    border-color: rgba(15, 23, 42, 0.14);
+    background: #ffffff;
+}
+
+html:not(.dark) .fi-input-wrp:not(.fi-disabled):hover {
+    border-color: rgba(15, 23, 42, 0.22);
+    background: #ffffff;
+}
+
+.fi-input-wrp:not(.fi-disabled):not(:has(.fi-ac-action:focus)):focus-within {
+    border-color: var(--vs-ring);
+    background: color-mix(in srgb, var(--vs-surface-1) 88%, transparent);
+    box-shadow: 0 0 0 3px var(--vs-ring-soft);
+}
+
+.fi-input-wrp.fi-disabled {
+    background: color-mix(in srgb, var(--vs-surface-2) 65%, transparent);
+    opacity: 0.72;
+}
+
+.fi-input-wrp.fi-invalid {
+    border-color: color-mix(in srgb, var(--vs-danger) 68%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--vs-danger) 12%, transparent);
+}
+
+.fi-input-wrp .fi-input-wrp-prefix,
+.fi-input-wrp .fi-input-wrp-suffix {
+    color: var(--vs-text-3);
+}
+
+.fi-input-wrp .fi-input-wrp-prefix:not(.fi-inline) {
+    border-inline-end-color: var(--vs-border);
+}
+
+.fi-input-wrp .fi-input-wrp-suffix:not(.fi-inline) {
+    border-inline-start-color: var(--vs-border);
+}
+
+.fi-input-wrp .fi-input-wrp-label {
+    color: var(--vs-text-3);
+    font-size: 11.5px;
+    font-weight: 500;
+}
+
+.fi-input-wrp .fi-input-wrp-prefix > .fi-icon,
+.fi-input-wrp .fi-input-wrp-suffix > .fi-icon {
+    color: var(--vs-text-3);
+}
+
+input.fi-input,
+select.fi-select-input,
+.fi-select-input .fi-select-input-btn,
+.fi-fo-textarea textarea {
+    color: var(--vs-text);
+    font-family: var(--font-family);
+    line-height: 1.5;
+    caret-color: var(--vs-accent);
+}
+
+select.fi-select-input,
+.fi-select-input .fi-select-input-btn {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%238a95a8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.7rem center;
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+}
+
+html.dark select.fi-select-input,
+html.dark .fi-select-input .fi-select-input-btn {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%237e88a3' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+}
+
+input.fi-input::placeholder,
+.fi-fo-textarea textarea::placeholder,
+.fi-select-input .fi-select-input-placeholder {
+    color: var(--vs-text-4);
+}
+
+input.fi-input:disabled,
+select.fi-select-input:disabled,
+.fi-fo-textarea textarea:disabled,
+.fi-select-input.fi-disabled .fi-select-input-btn {
+    color: var(--vs-text-3);
+    -webkit-text-fill-color: var(--vs-text-3);
+}
+
+html:not(.dark) input.fi-input:is([type='date'], [type='datetime-local'], [type='time']) {
+    color-scheme: light;
+}
+
+html.dark input.fi-input:is([type='date'], [type='datetime-local'], [type='time']) {
+    color-scheme: dark;
+}
+
+input.fi-input:is([type='date'], [type='datetime-local'], [type='time'])::-webkit-calendar-picker-indicator {
+    margin-inline-start: 0.45rem;
+    cursor: pointer;
+    opacity: 0.72;
+}
+
+input.fi-input:is([type='date'], [type='datetime-local'], [type='time'])::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+.fi-select-input .fi-select-input-value-remove-btn {
+    border-radius: var(--vs-radius-pill);
+    color: var(--vs-text-3);
+    transition: var(--vs-transition);
+}
+
+.fi-select-input .fi-select-input-value-remove-btn:hover,
+.fi-select-input .fi-select-input-value-remove-btn:focus-visible {
+    background: var(--vs-surface-3);
+    color: var(--vs-text);
+    outline: none;
+}
+
+.fi-select-input .fi-select-input-search-ctn {
+    border-bottom: 1px solid var(--vs-border);
+    background: var(--vs-surface-1);
+}
+
+.fi-select-input .fi-select-input-search-ctn .fi-input:focus {
+    border-color: var(--vs-ring);
+    box-shadow: 0 0 0 3px var(--vs-ring-soft);
+}
+
+.fi-select-input .fi-select-input-option.fi-selected {
+    border-color: color-mix(in srgb, var(--vs-accent) 18%, transparent);
+    background: color-mix(in srgb, var(--vs-accent) 10%, var(--vs-surface-3));
+    color: var(--vs-text);
+}
+
+.fi-select-input .fi-select-input-option.fi-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.fi-select-input .fi-dropdown-panel,
+.fi-select-input .fi-select-input-options-ctn,
+.fi-select-input .fi-dropdown-list {
+    background: var(--vs-surface-1);
+}
+
+.fi-select-input .fi-select-input-option-group,
+.fi-select-input .fi-select-input-options-ctn {
+    border-color: var(--vs-border);
+}
+
+.fi-select-input .fi-dropdown-header,
+.fi-select-input .fi-select-input-message {
+    color: var(--vs-text-3);
+    font-size: 11.5px;
+}
+
+.fi-select-input .fi-select-input-option {
+    min-width: 1px;
+    word-break: break-word;
+}
+
+.fi-select-input .fi-disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.fi-select-input .fi-disabled .fi-select-input-placeholder {
+    color: var(--vs-text-4);
+}
+
+.fi-select-input .fi-select-input-message {
+    padding: 0.75rem 0.9rem 0.85rem;
+}
+
+.fi-checkbox-input,
+.fi-radio-input {
+    appearance: none;
+    position: relative;
+    flex-shrink: 0;
+    transition: var(--vs-transition);
+    cursor: pointer;
+}
+
+.fi-checkbox-input {
+    height: 17px;
+    width: 17px;
+    border: 1.5px solid color-mix(in srgb, var(--vs-text) 18%, transparent);
+    border-radius: 5px;
+    background: transparent;
+}
+
+.fi-checkbox-input:hover {
+    border-color: color-mix(in srgb, var(--vs-accent) 58%, transparent);
+}
+
+.fi-checkbox-input:checked {
+    border-color: var(--vs-accent);
+    background: var(--vs-accent);
+}
+
+.fi-checkbox-input:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #fff;
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(45deg);
+}
+
+.fi-checkbox-input:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--vs-ring-soft);
+}
+
+.fi-checkbox-input.fi-invalid {
+    border-color: var(--vs-danger);
+}
+
+.fi-radio-input {
+    height: 17px;
+    width: 17px;
+    border: 1.5px solid color-mix(in srgb, var(--vs-text) 18%, transparent);
+    border-radius: var(--vs-radius-pill);
+    background: transparent;
+}
+
+.fi-radio-input:hover {
+    border-color: color-mix(in srgb, var(--vs-accent) 58%, transparent);
+}
+
+.fi-radio-input:checked {
+    border-color: var(--vs-accent);
+    background: var(--vs-accent);
+}
+
+.fi-radio-input:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 6px;
+    width: 6px;
+    border-radius: var(--vs-radius-pill);
+    background: #fff;
+    transform: translate(-50%, -50%);
+}
+
+.fi-radio-input:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--vs-ring-soft);
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input + .fi-btn {
+    box-shadow: none;
+    transform: none;
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input + .fi-btn > .fi-icon,
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input + .fi-btn .fi-loading-indicator {
+    color: currentColor;
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input + .fi-btn:not(.fi-outlined) {
+    border-color: var(--vs-border);
+    background: color-mix(in srgb, var(--vs-surface-2) 90%, transparent);
+    color: var(--vs-text-3);
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input + .fi-btn.fi-color:not(.fi-outlined) {
+    border-color: color-mix(in srgb, var(--text) 14%, var(--vs-border));
+    background: color-mix(in srgb, var(--vs-surface-2) 94%, transparent);
+    color: color-mix(in srgb, var(--text) 52%, var(--vs-text-3));
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input:not(:disabled) + .fi-btn:not(.fi-outlined):hover,
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input:not(:disabled) + .fi-btn:not(.fi-outlined):focus-visible {
+    border-color: var(--vs-border-strong);
+    background: color-mix(in srgb, var(--vs-surface-3) 94%, transparent);
+    color: var(--vs-text);
+    transform: none;
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input:not(:checked):not(:disabled) + .fi-btn.fi-color:not(.fi-outlined):hover,
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input:not(:checked):not(:disabled) + .fi-btn.fi-color:not(.fi-outlined):focus-visible {
+    border-color: color-mix(in srgb, var(--text) 26%, var(--vs-border-strong));
+    background: color-mix(in srgb, var(--text) 8%, var(--vs-surface-3));
+    color: color-mix(in srgb, var(--text) 76%, var(--vs-text));
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input:checked + .fi-btn:not(.fi-color):not(.fi-outlined) {
+    border-color: color-mix(in srgb, var(--vs-accent) 18%, transparent);
+    background: var(--vs-accent-soft);
+    color: var(--vs-accent-2);
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input:checked + .fi-btn.fi-color:not(.fi-outlined) {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--bg), var(--hover-bg));
+    box-shadow: 0 0 20px color-mix(in srgb, var(--bg) 28%, transparent);
+    color: var(--text);
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input:focus-visible + .fi-btn {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--vs-ring-soft);
+}
+
+.fi-fo-toggle-buttons .fi-fo-toggle-buttons-input:checked:focus-visible + .fi-btn.fi-color:not(.fi-outlined) {
+    box-shadow:
+        0 0 20px color-mix(in srgb, var(--bg) 28%, transparent),
+        0 0 0 3px color-mix(in srgb, var(--bg) 16%, transparent);
+}
+
+.fi-fo-repeater .fi-fo-repeater-item,
+.fi-fo-table-repeater > table {
+    background: color-mix(in srgb, var(--vs-surface-1) 94%, transparent);
+    box-shadow: inset 0 0 0 1px var(--vs-border);
+}
+
+.fi-fo-repeater .fi-fo-repeater-actions {
+    border-bottom: 1px solid var(--vs-border);
+    background: color-mix(in srgb, var(--vs-surface-2) 82%, transparent);
+}
+
+.fi-fo-repeater .fi-fo-repeater-item-header,
+.fi-fo-builder-item-header,
+.fi-fo-rich-editor-toolbar,
+.fi-fo-rich-editor-panel-header {
+    border-bottom: 1px solid var(--vs-border);
+    background: color-mix(in srgb, var(--vs-surface-2) 84%, transparent);
+}
+
+.fi-fo-repeater .fi-fo-repeater-item-has-header > .fi-fo-repeater-item-content {
+    border-top-color: var(--vs-border);
+}
+
+.fi-fo-table-repeater > table > thead > tr > th {
+    border-color: var(--vs-border);
+    background: color-mix(in srgb, var(--vs-surface-2) 86%, transparent);
+    color: var(--vs-text-3);
+}
+
+.fi-fo-table-repeater > table > tbody {
+    border-color: var(--vs-border);
+}
+
+.fi-fo-table-repeater > table > tbody > tr > td {
+    border-color: var(--vs-border);
+}
+
+.fi-fo-table-repeater-empty-header-cell {
+    color: var(--vs-text-3);
+}
+
+.fi-fo-table-repeater-header-required-mark {
+    color: var(--vs-accent-2);
+}
+
+.fi-fo-repeater .fi-icon-btn,
+.fi-fo-simple-repeater .fi-icon-btn,
+.fi-fo-table-repeater .fi-icon-btn {
+    background: var(--vs-muted-surface);
+}
+
+.fi-fo-repeater .fi-icon-btn:hover,
+.fi-fo-repeater .fi-icon-btn:focus-visible,
+.fi-fo-simple-repeater .fi-icon-btn:hover,
+.fi-fo-simple-repeater .fi-icon-btn:focus-visible,
+.fi-fo-table-repeater .fi-icon-btn:hover,
+.fi-fo-table-repeater .fi-icon-btn:focus-visible {
+    background: var(--vs-control-bg-hover);
+}
+
+.fi-fo-repeater-item-content,
+.fi-fo-builder-item-content {
+    background: transparent;
+}
+
+.fi-fo-repeater-item-header-label,
+.fi-fo-builder-item-header-label {
+    color: var(--vs-text);
+}
+
+.fi-fo-repeater-label-between-items {
+    color: var(--vs-text-4);
+}
+
+.fi-fo-repeater-label-between-items-divider-before,
+.fi-fo-repeater-label-between-items-divider-after {
+    background: color-mix(in srgb, var(--vs-border-strong) 72%, transparent);
+}
+
+.fi-fo-rich-editor-main {
+    min-height: 240px;
+    background: transparent;
+}
+
+.fi-fo-rich-editor-content {
+    color: var(--vs-text);
+}
+
+.fi-fo-rich-editor-uploading-file-message {
+    color: var(--vs-text-3);
+    font-size: 11px;
+}

@@ -1,0 +1,714 @@
+.fi-dropdown-panel,
+.fi-global-search-results-ctn,
+.fi-modal-window {
+    border: 1px solid var(--vs-border);
+    border-radius: var(--vs-radius-lg);
+    background: var(--vs-surface-1);
+    box-shadow:
+        var(--vs-shadow),
+        0 0 0 1px var(--vs-panel-highlight-border);
+}
+
+.fi-dropdown-panel,
+.fi-global-search-results-ctn {
+    z-index: 60;
+}
+
+.fi-modal-close-overlay,
+.fi-modal-window-ctn {
+    z-index: 80;
+}
+
+.fi-modal.fi-modal-open ~ .fi-modal.fi-modal-open > .fi-modal-close-overlay,
+.fi-modal.fi-modal-open ~ .fi-modal.fi-modal-open > .fi-modal-window-ctn {
+    z-index: 85;
+}
+
+.fi-dropdown-panel.fi-scrollable {
+    overscroll-behavior: contain;
+}
+
+.fi-dropdown-panel .fi-dropdown-header {
+    color: var(--vs-text-3);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.fi-dropdown-list-item {
+    border: 1px solid transparent;
+    border-radius: 9px;
+    color: var(--vs-text-2);
+    transition: var(--vs-transition);
+}
+
+.fi-dropdown-list-item:hover,
+.fi-dropdown-list-item:focus-visible {
+    border-color: var(--vs-border);
+    background: var(--vs-control-bg);
+    color: var(--vs-text);
+    outline: none;
+}
+
+.fi-dropdown-list-item.fi-color-danger:hover,
+.fi-dropdown-list-item.fi-color-danger:focus-visible {
+    background: var(--vs-danger-soft);
+    color: var(--vs-danger);
+}
+
+.fi-dropdown-list-item-image {
+    border-radius: 8px;
+}
+
+.fi-global-search-results-ctn {
+    border-color: var(--vs-border);
+    background: var(--vs-surface-1);
+}
+
+.fi-global-search-no-results-message {
+    color: var(--vs-text-2);
+    font-size: 12.5px;
+}
+
+.fi-global-search-results,
+.fi-global-search-result-group-results {
+    border-color: var(--vs-border);
+}
+
+.fi-global-search-result-group-header {
+    border-bottom: 1px solid var(--vs-border);
+    color: var(--vs-text-3);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.fi-global-search-result:hover,
+.fi-global-search-result:focus-within {
+    background: var(--vs-control-bg);
+}
+
+.fi-global-search-result-link {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: var(--vs-transition);
+}
+
+.fi-global-search-result-link:hover,
+.fi-global-search-result-link:focus-visible {
+    border-color: var(--vs-border);
+    background: var(--vs-control-bg);
+    outline: none;
+}
+
+.fi-global-search-result-heading {
+    color: var(--vs-text);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.fi-global-search-result-detail,
+.fi-global-search-result-details,
+.fi-global-search-result-detail-value {
+    color: var(--vs-text-2);
+    font-size: 12px;
+}
+
+.fi-modal-close-overlay {
+    background: rgba(5, 7, 15, 0.72);
+    backdrop-filter: blur(10px);
+}
+
+.fi-modal-window {
+    background: var(--vs-surface-1);
+}
+
+.fi-modal-header {
+    border-bottom: 1px solid var(--vs-border);
+}
+
+/*
+ * Filament's stock modal is borderless: the header has no padding-bottom and the
+ * content uses a negative top margin to sit flush. Once Vesper draws a divider under
+ * the header, that leaves the heading glued to the divider and the body overlapping
+ * it. Give the header breathing room below its divider and cancel the body's pull-up.
+ */
+.fi-modal > .fi-modal-window-ctn > .fi-modal-window .fi-modal-header {
+    padding-bottom: 18px;
+}
+
+.fi-modal > .fi-modal-window-ctn > .fi-modal-window .fi-modal-content {
+    margin-top: 0;
+}
+
+.fi-modal-icon-bg {
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--text) 12%, transparent);
+    color: var(--text);
+}
+
+.fi-modal-heading {
+    color: var(--vs-text);
+    font-family: var(--serif-font-family);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.fi-modal-description {
+    color: var(--vs-text-4);
+    font-size: 12.5px;
+    line-height: 1.65;
+}
+
+.fi-modal-footer {
+    border-top: 1px solid var(--vs-border);
+}
+
+/*
+ * Match the header: Filament gives the footer a padding-bottom but no padding-top,
+ * so once Vesper draws a divider above it the action buttons hug that divider.
+ * Add space above the buttons. (The compact confirmation modal sets its own footer
+ * padding at a higher specificity, so it is unaffected.)
+ */
+.fi-modal:not(.fi-modal-has-sticky-footer) > .fi-modal-window-ctn > .fi-modal-window .fi-modal-footer {
+    padding-top: 18px;
+}
+
+/* Remove the extra wrapper gap around record-create forms inside action modals. */
+.fi-modal > .fi-modal-window-ctn > .fi-modal-window.vs-record-create-modal > .fi-modal-content {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-close-overlay {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+.fi-modal-window.vs-confirmation-modal-window {
+    width: min(100%, 26.25rem);
+    max-width: min(26.25rem, calc(100vw - 2rem));
+    overflow: hidden;
+    border-color: color-mix(in srgb, var(--vs-border) 85%, transparent);
+    border-radius: 12px;
+    background: var(--vs-surface-1);
+    box-shadow: 0 20px 25px -5px rgb(15 23 42 / 0.12);
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-header {
+    display: flex;
+    /* Filament's base .fi-modal-header now defaults to flex-direction: column;
+       pin it back to row so the icon and heading sit side by side. */
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.875rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--vs-border);
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-icon-ctn {
+    flex-shrink: 0;
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-icon-bg {
+    display: inline-flex;
+    height: 2.25rem;
+    width: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, var(--color-500, var(--vs-text)) 14%, transparent);
+    color: var(--color-600, var(--vs-text));
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-icon-bg .fi-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-header > div:last-child {
+    min-width: 0;
+    padding-top: 0.125rem;
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-heading {
+    margin: 0;
+    color: var(--vs-text);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-description {
+    margin-top: 0.25rem;
+    color: var(--vs-text-2);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.fi-modal.vs-confirmation-modal .fi-modal-footer {
+    padding: 1rem 1.5rem 1.25rem;
+    border-top: 0;
+}
+
+.vs-confirmation-modal-actions {
+    display: flex;
+    /* Filament's base .fi-modal-footer-actions is mobile-first column-reverse;
+       pin it to row on desktop so the buttons sit inline and right-aligned
+       instead of stretching full width. The mobile stack is restored below. */
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.vs-confirmation-modal-actions .fi-btn {
+    min-height: 2.5rem;
+    border-radius: 0.5rem;
+    padding-inline: 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.vs-confirmation-modal-actions > .fi-btn:first-child,
+.vs-confirmation-modal-actions > :first-child:not(.fi-btn) .fi-btn {
+    background: transparent;
+    color: var(--vs-text-2);
+    --tw-ring-shadow: 0 0 #0000;
+    box-shadow: none;
+}
+
+@media (hover: hover) {
+    .vs-confirmation-modal-actions > .fi-btn:first-child:hover,
+    .vs-confirmation-modal-actions > :first-child:not(.fi-btn) .fi-btn:hover {
+        background: var(--vs-surface-3);
+        color: var(--vs-text);
+    }
+}
+
+@media (max-width: 640px) {
+    .fi-modal.vs-confirmation-modal .fi-modal-footer {
+        padding-top: 0.75rem;
+    }
+
+    .vs-confirmation-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .vs-confirmation-modal-actions .fi-btn {
+        width: 100%;
+    }
+}
+
+.fi-no {
+    z-index: 90;
+}
+
+.fi-no .fi-no-notification:not(.fi-inline) {
+    max-width: min(24rem, calc(100vw - 1rem));
+    border: 1px solid var(--vs-border);
+    border-radius: var(--vs-radius-xl);
+    background:
+        radial-gradient(circle at top right, rgb(var(--vs-accent-rgb) / 0.08), transparent 9rem),
+        color-mix(in srgb, var(--vs-surface-1) 94%, transparent);
+    box-shadow:
+        var(--vs-shadow-soft),
+        0 0 0 1px var(--vs-panel-highlight-border);
+    backdrop-filter: blur(16px);
+}
+
+.fi-no .fi-no-notification.fi-color:not(.fi-inline) {
+    border-color: color-mix(in srgb, var(--text) 18%, var(--vs-border));
+    background:
+        linear-gradient(180deg, color-mix(in srgb, var(--text) 10%, var(--vs-surface-1)), var(--vs-surface-1));
+}
+
+.fi-no .fi-no-notification:not(.fi-inline) .fi-no-notification-icon {
+    display: inline-flex;
+    height: 2.25rem;
+    width: 2.25rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.9rem;
+    background: var(--vs-surface-3);
+}
+
+.fi-no .fi-no-notification.fi-color:not(.fi-inline) .fi-no-notification-icon {
+    background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.fi-no .fi-no-notification:not(.fi-inline) .fi-no-notification-title {
+    color: var(--vs-text);
+}
+
+.fi-no .fi-no-notification:not(.fi-inline) .fi-no-notification-date,
+.fi-no .fi-no-notification:not(.fi-inline) .fi-no-notification-body {
+    color: var(--vs-text-2);
+}
+
+.fi-no .fi-no-notification:not(.fi-inline) .fi-no-notification-body {
+    overflow-wrap: anywhere;
+}
+
+.fi-no .fi-no-notification:not(.fi-inline) .fi-no-notification-actions {
+    gap: 0.5rem;
+}
+
+.fi-no .fi-no-notification:not(.fi-inline) .fi-no-notification-close-btn {
+    margin-top: 0;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.vs-topbar-notifications,
+.vs-topbar-tenant-menu {
+    display: inline-flex;
+}
+
+.vs-topbar-notifications .fi-dropdown-trigger,
+.vs-user-menu .fi-dropdown-trigger,
+.vs-topbar-tenant-menu .fi-dropdown-trigger {
+    display: inline-flex;
+}
+
+.vs-topbar-tenant-menu .fi-dropdown-panel {
+    width: var(--vs-dropdown-width) !important;
+}
+
+.vs-user-menu .fi-dropdown-panel {
+    width: var(--vs-user-menu-width) !important;
+    overflow: hidden;
+}
+
+.vs-topbar-notifications .fi-dropdown-panel {
+    width: min(var(--vs-notifications-width), calc(100vw - 1rem)) !important;
+    max-width: calc(100vw - 1rem);
+    overflow: hidden;
+}
+
+.vs-topbar-tenant-menu .fi-dropdown-trigger > a,
+.vs-topbar-tenant-menu .fi-dropdown-trigger > button {
+    display: inline-flex;
+    min-height: var(--vs-control-size);
+    align-items: center;
+    gap: 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding-inline: 10px;
+    color: var(--vs-text-2);
+    transition: var(--vs-transition);
+}
+
+.vs-topbar-tenant-menu .fi-dropdown-trigger > a:hover,
+.vs-topbar-tenant-menu .fi-dropdown-trigger > button:hover {
+    border-color: var(--vs-border);
+    background: var(--vs-control-bg);
+    color: var(--vs-text);
+}
+
+.vs-topbar-notifications-dot {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    height: 7px;
+    width: 7px;
+    border: 2px solid var(--vs-surface-1);
+    border-radius: var(--vs-radius-pill);
+    background: var(--vs-danger);
+    animation: vs-topbar-pulse 2s infinite;
+}
+
+@keyframes vs-topbar-pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgb(var(--vs-danger-rgb) / 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 5px rgb(var(--vs-danger-rgb) / 0);
+    }
+}
+
+.vs-topbar-notifications-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--vs-border);
+    padding: 14px 16px 10px;
+}
+
+.vs-topbar-notifications-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 0;
+}
+
+.vs-topbar-notifications-title {
+    color: var(--vs-text);
+    font-family: var(--serif-font-family);
+    font-size: 13.5px;
+    font-weight: 700;
+}
+
+.vs-topbar-notifications-count {
+    display: inline-flex;
+    min-width: 20px;
+    justify-content: center;
+    border-radius: var(--vs-radius-pill);
+    background: var(--vs-accent-soft);
+    padding: 2px 7px;
+    color: var(--vs-accent-2);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.vs-topbar-notifications-header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+}
+
+.vs-topbar-notifications-header-actions :is(a, button) {
+    color: var(--vs-accent-2);
+    font-size: 11.5px;
+    font-weight: 500;
+}
+
+.vs-topbar-notifications-header-actions :is(a, button):hover {
+    color: var(--vs-accent);
+}
+
+.vs-topbar-notifications-list {
+    max-height: min(340px, calc(100vh - 13rem));
+    overscroll-behavior: contain;
+    overflow-y: auto;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-read-ctn,
+.vs-topbar-notifications-list .fi-no-notification-unread-ctn {
+    position: relative;
+    border-bottom: 1px solid var(--vs-border);
+}
+
+.vs-topbar-notifications-list .fi-no-notification-read-ctn:last-child,
+.vs-topbar-notifications-list .fi-no-notification-unread-ctn:last-child {
+    border-bottom: none;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-unread-ctn {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--vs-accent) 7%, transparent), var(--vs-accent-muted));
+}
+
+.vs-topbar-notifications-list .fi-no-notification-unread-ctn::before {
+    content: '';
+    position: absolute;
+    inset-block: 10px;
+    inset-inline-start: 0;
+    width: 3px;
+    border-radius: 0 var(--vs-radius-pill) var(--vs-radius-pill) 0;
+    background: var(--vs-accent);
+    box-shadow: 0 0 10px var(--vs-accent-glow);
+}
+
+.vs-topbar-notifications-list .fi-no-notification {
+    align-items: flex-start;
+    gap: 11px;
+    min-width: 0;
+    padding: 12px 16px;
+    color: var(--vs-text);
+}
+
+.vs-topbar-notifications-list .fi-no-notification:hover {
+    background: var(--vs-muted-surface);
+}
+
+.vs-topbar-notifications-list .fi-no-notification-icon {
+    display: inline-flex;
+    height: 32px;
+    width: 32px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.vs-topbar-notifications-list .fi-no-notification-icon svg {
+    height: 15px;
+    width: 15px;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-main {
+    min-width: 0;
+    flex: 1;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-title {
+    color: var(--vs-text);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-date {
+    display: block;
+    margin-top: 3px;
+    color: var(--vs-text-3);
+    font-size: 10.5px;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-body {
+    margin-top: 2px;
+    color: var(--vs-text-2);
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap: 8px;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-close-btn {
+    margin-top: 2px;
+    flex-shrink: 0;
+    color: var(--vs-text-3);
+    opacity: 0.55;
+}
+
+.vs-topbar-notifications-list .fi-no-notification-close-btn:hover {
+    color: var(--vs-text-2);
+    opacity: 1;
+}
+
+.vs-topbar-notifications-empty {
+    display: grid;
+    place-items: center;
+    gap: 8px;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+.vs-topbar-notifications-empty-icon {
+    display: inline-flex;
+    height: 42px;
+    width: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--vs-radius-lg);
+    background: var(--vs-surface-3);
+    color: var(--vs-text-3);
+}
+
+.vs-topbar-notifications-empty-icon svg {
+    height: 20px;
+    width: 20px;
+}
+
+.vs-topbar-notifications-empty-heading {
+    color: var(--vs-text);
+    font-family: var(--serif-font-family);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.vs-topbar-notifications-empty-description {
+    max-width: 220px;
+    color: var(--vs-text-2);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.vs-topbar-notifications-footer {
+    border-top: 1px solid var(--vs-border);
+    min-width: 0;
+    padding: 10px 12px;
+}
+
+@media (max-width: 640px) {
+    .vs-topbar-notifications-header {
+        padding-inline: 14px;
+    }
+
+    .vs-topbar-notifications-list .fi-no-notification {
+        padding-inline: 14px;
+    }
+
+    .vs-topbar-notifications-footer {
+        padding-inline: 10px;
+    }
+}
+
+.vs-user-menu-panel {
+    width: var(--vs-user-menu-width);
+}
+
+.vs-user-menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--vs-border);
+    padding: 14px 14px 12px;
+}
+
+.vs-user-menu-header-avatar.fi-user-avatar,
+.vs-user-menu-trigger .fi-user-avatar {
+    border-radius: 10px;
+}
+
+.vs-user-menu-trigger .fi-user-avatar {
+    height: var(--vs-user-avatar-size);
+    width: var(--vs-user-avatar-size);
+}
+
+.vs-user-menu-header-avatar.fi-user-avatar {
+    height: var(--vs-user-avatar-lg-size);
+    width: var(--vs-user-avatar-lg-size);
+}
+
+.vs-user-menu-header-copy {
+    min-width: 0;
+}
+
+.vs-user-menu-header-name {
+    color: var(--vs-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.vs-user-menu-header-email {
+    overflow: hidden;
+    color: var(--vs-text-3);
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vs-user-menu-list {
+    padding: 6px;
+}
+
+.vs-user-menu-divider {
+    height: 1px;
+    margin-inline: 6px;
+    background: var(--vs-border);
+}
+
+@media (max-width: 768px) {
+    .fi-modal-window-ctn {
+        padding: 16px;
+    }
+}

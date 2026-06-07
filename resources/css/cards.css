@@ -1,0 +1,320 @@
+.fi-section,
+.fi-wi-widget,
+.fi-empty-state:not(.fi-empty-state-not-contained),
+.fi-callout,
+.fi-loading-section {
+    border: 1px solid var(--vs-border);
+    border-radius: var(--vs-radius-xl);
+    background: var(--vs-surface-1);
+    box-shadow: none;
+}
+
+.fi-section.fi-compact {
+    border-radius: var(--vs-radius-lg);
+}
+
+.fi-section.fi-secondary {
+    background: color-mix(in srgb, var(--vs-surface-2) 86%, transparent);
+}
+
+.fi-section .fi-section,
+.fi-section .fi-wi-widget,
+.fi-wi-widget .fi-section,
+.fi-wi-widget .fi-wi-widget {
+    border-radius: var(--vs-radius-lg);
+}
+
+.fi-section.fi-section-has-header:not(.fi-collapsed) > .fi-section-content-ctn,
+.fi-section > .fi-section-content-ctn > .fi-section-footer {
+    border-top: 1px solid var(--vs-border);
+}
+
+.fi-section > .fi-section-header > .fi-icon {
+    color: var(--vs-text-3);
+}
+
+.fi-section > .fi-section-header > .fi-icon.fi-color {
+    color: var(--text);
+}
+
+.fi-section-header-heading {
+    color: var(--vs-text);
+    font-family: var(--serif-font-family);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.fi-section-header-description {
+    color: var(--vs-text-4);
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+.fi-section-collapse-btn {
+    color: var(--vs-text-3);
+}
+
+.fi-section.fi-collapsible > .fi-section-header:hover {
+    background: color-mix(in srgb, var(--vs-surface-2) 76%, transparent);
+}
+
+.fi-tabs:not(.fi-contained),
+.fi-page-sub-navigation-tabs {
+    border-radius: var(--vs-radius-xl);
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--vs-surface-2) 86%, transparent),
+        color-mix(in srgb, var(--vs-surface-1) 92%, transparent)
+    );
+    box-shadow: inset 0 0 0 1px var(--vs-border);
+}
+
+.fi-tabs.fi-contained {
+    border-color: var(--vs-border);
+    background: color-mix(in srgb, var(--vs-surface-2) 88%, transparent);
+}
+
+.fi-sc-tabs.fi-contained {
+    border-radius: var(--vs-radius-xl);
+    background: var(--vs-surface-1);
+    box-shadow: inset 0 0 0 1px var(--vs-border);
+}
+
+.fi-sc-tabs.fi-contained > .fi-tabs {
+    background: color-mix(in srgb, var(--vs-surface-2) 88%, transparent);
+    border-color: var(--vs-border);
+    border-start-start-radius: inherit;
+    border-start-end-radius: inherit;
+}
+
+.fi-callout.fi-color {
+    border-color: color-mix(in srgb, var(--text) 20%, transparent);
+    background: color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+.fi-callout-icon {
+    color: var(--vs-text-3);
+}
+
+.fi-callout.fi-color .fi-callout-icon,
+.fi-callout.fi-color .fi-callout-heading {
+    color: var(--text);
+}
+
+.fi-callout-heading {
+    color: var(--vs-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.fi-callout-description {
+    color: var(--vs-text-2);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.fi-empty-state-icon-bg {
+    border-radius: 999px;
+    background: var(--vs-surface-3);
+    color: var(--vs-text-3);
+}
+
+.fi-empty-state-icon-bg.fi-color {
+    background: color-mix(in srgb, var(--text) 12%, transparent);
+    color: var(--text);
+}
+
+.fi-empty-state-heading {
+    color: var(--vs-text);
+    font-family: var(--serif-font-family);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.fi-empty-state-description {
+    color: var(--vs-text-4);
+    font-size: 12.5px;
+    line-height: 1.7;
+}
+
+.fi-no-notification.fi-inline {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.fi-wi-widget.fi-wi-stats-overview,
+.fi-wi-widget.fi-wi-stats-overview .fi-sc-section,
+.fi-wi-widget.fi-wi-stats-overview .fi-section {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.fi-wi-widget.fi-wi-stats-overview .fi-section-header {
+    margin-bottom: 0.9rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.fi-wi-widget.fi-wi-stats-overview .fi-section-header-heading {
+    font-size: 1.1rem;
+    letter-spacing: -0.025em;
+}
+
+.fi-wi-widget.fi-wi-stats-overview .fi-section-header-description {
+    max-width: 42rem;
+    margin-top: 0.35rem;
+}
+
+.fi-wi-widget.fi-wi-stats-overview .fi-section-content-ctn,
+.fi-wi-widget.fi-wi-stats-overview .fi-section-content {
+    border: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.fi-wi-stats-overview-stat {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--vs-border);
+    border-radius: 14px;
+    background:
+        radial-gradient(circle at top right, rgb(var(--vs-accent-rgb) / 0.08), transparent 9rem),
+        var(--vs-surface-1);
+    padding: 18px 20px;
+    transition: var(--vs-transition);
+}
+
+.fi-wi-stats-overview-stat::before {
+    content: '';
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--vs-brand-gradient-start), var(--vs-brand-gradient-end));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.fi-wi-stats-overview-stat:is(a, button):hover,
+.fi-wi-stats-overview-stat:is(a, button):focus-visible,
+.fi-wi-stats-overview-stat:hover,
+.fi-wi-stats-overview-stat:focus-visible {
+    border-color: var(--vs-border-strong);
+    background:
+        radial-gradient(circle at top right, rgb(var(--vs-accent-rgb) / 0.11), transparent 9rem),
+        color-mix(in srgb, var(--vs-surface-1) 94%, var(--vs-surface-2));
+    outline: none;
+}
+
+.fi-wi-stats-overview-stat:is(a, button):hover::before,
+.fi-wi-stats-overview-stat:is(a, button):focus-visible::before,
+.fi-wi-stats-overview-stat:hover::before,
+.fi-wi-stats-overview-stat:focus-visible::before {
+    opacity: 1;
+}
+
+.fi-wi-stats-overview-stat:focus-visible {
+    box-shadow: 0 0 0 3px var(--vs-ring-soft);
+}
+
+.fi-wi-stats-overview-stat .fi-icon {
+    color: var(--vs-text-3);
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.fi-wi-stats-overview-stat:has(.fi-wi-stats-overview-stat-chart) .fi-wi-stats-overview-stat-content {
+    padding-bottom: 1.15rem;
+    padding-top: 1.15rem;
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-label-ctn {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-label {
+    color: var(--vs-text-3);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-value {
+    color: var(--vs-text);
+    font-family: var(--serif-font-family);
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-description {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid var(--vs-border);
+    border-radius: var(--vs-radius-pill);
+    background: color-mix(in srgb, var(--vs-surface-2) 88%, transparent);
+    padding: 0.28rem 0.55rem;
+    color: var(--vs-text-2);
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-description.fi-color {
+    border-color: color-mix(in srgb, var(--text) 18%, transparent);
+    background: color-mix(in srgb, var(--text) 10%, transparent);
+    color: var(--text);
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-description.fi-color .fi-icon {
+    color: currentColor;
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-chart {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-top: 1px solid color-mix(in srgb, var(--vs-border) 70%, transparent);
+    background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--vs-surface-2) 92%, transparent));
+    pointer-events: none;
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-chart > canvas {
+    height: 38px;
+    opacity: 0.95;
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-chart .fi-wi-stats-overview-stat-chart-bg-color {
+    color: color-mix(in srgb, var(--vs-accent) 10%, var(--vs-surface-2));
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-chart .fi-wi-stats-overview-stat-chart-border-color {
+    color: color-mix(in srgb, var(--vs-accent) 42%, var(--vs-text-3));
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-chart.fi-color .fi-wi-stats-overview-stat-chart-bg-color {
+    color: color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+.fi-wi-stats-overview-stat .fi-wi-stats-overview-stat-chart.fi-color .fi-wi-stats-overview-stat-chart-border-color {
+    color: color-mix(in srgb, var(--text) 68%, transparent);
+}

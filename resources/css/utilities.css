@@ -1,0 +1,71 @@
+.fi-badge {
+    border: 1px solid var(--vs-border);
+    border-radius: var(--vs-radius-pill);
+    background: var(--vs-muted-surface);
+    color: var(--vs-text-2);
+    transition: var(--vs-transition);
+}
+
+.fi-badge.fi-size-xs {
+    font-size: 10px;
+}
+
+.fi-badge.fi-size-sm {
+    font-size: 11px;
+}
+
+.fi-badge.fi-color {
+    border-color: color-mix(in srgb, var(--text) 16%, transparent);
+    background: color-mix(in srgb, var(--text) 10%, transparent);
+    color: var(--text);
+}
+
+.fi-badge .fi-icon {
+    color: currentColor;
+}
+
+.fi-badge-delete-btn {
+    color: inherit;
+    opacity: 0.65;
+}
+
+.fi-badge-delete-btn:hover,
+.fi-badge-delete-btn:focus-visible {
+    opacity: 1;
+    outline: none;
+}
+
+.fi-dropdown-list,
+.fi-modal-footer-actions,
+.fi-empty-state-footer,
+.fi-callout-footer,
+.fi-callout-controls {
+    min-width: 0;
+}
+
+.fi-prose {
+    color: var(--vs-text);
+}
+
+.fi-prose :is(p, li, blockquote) {
+    color: var(--vs-text-2);
+}
+
+.fi-prose :is(h1, h2, h3, h4, strong, b) {
+    color: var(--vs-text);
+}
+
+.fi-prose code {
+    border: 1px solid var(--vs-border);
+    border-radius: 6px;
+    background: var(--vs-surface-3);
+    color: var(--vs-text);
+    font-family: var(--mono-font-family);
+    font-size: 0.9em;
+}
+
+.fi-prose pre {
+    border: 1px solid var(--vs-border);
+    border-radius: var(--vs-radius-lg);
+    box-shadow: none;
+}

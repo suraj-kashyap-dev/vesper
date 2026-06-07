@@ -1,0 +1,215 @@
+:root {
+    --font-family: 'Plus Jakarta Sans', sans-serif;
+    --mono-font-family: 'Geist Mono', monospace;
+    --serif-font-family: 'Space Grotesk', sans-serif;
+    --vs-bg: #f6f8fb;
+    --vs-bg-rgb: 246 248 251;
+    --vs-surface-1: #fbfcfd;
+    --vs-surface-2: #f3f5f8;
+    --vs-surface-3: #e9edf3;
+    --vs-surface-4: #dde4ec;
+    --vs-surface-5: #d1dae6;
+    --vs-border: rgba(15, 23, 42, 0.07);
+    --vs-border-strong: rgba(15, 23, 42, 0.11);
+    --vs-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    --vs-shadow-soft: 0 8px 18px rgba(15, 23, 42, 0.05);
+    --vs-shadow-card: 0 10px 24px rgba(15, 23, 42, 0.06);
+    --vs-overlay: rgba(6, 10, 18, 0.58);
+    --vs-ring: rgba(123, 92, 240, 0.58);
+    --vs-ring-soft: rgba(123, 92, 240, 0.14);
+    --vs-accent: #7b5cf0;
+    --vs-accent-soft: rgba(123, 92, 240, 0.15);
+    --vs-accent-muted: rgba(123, 92, 240, 0.06);
+    --vs-accent-glow: rgba(123, 92, 240, 0.32);
+    --vs-accent-rgb: 123 92 240;
+    --vs-accent-2: #7b5cf0;
+    --vs-text: #243246;
+    --vs-text-2: #58687b;
+    --vs-text-3: #90a0b2;
+    --vs-text-4: rgba(88, 104, 123, 0.7);
+    --vs-success: #10b981;
+    --vs-success-soft: rgba(16, 185, 129, 0.12);
+    --vs-warning: #f59e0b;
+    --vs-warning-soft: rgba(245, 158, 11, 0.12);
+    --vs-danger: #f43f5e;
+    --vs-danger-soft: rgba(244, 63, 94, 0.12);
+    --vs-danger-rgb: 244 63 94;
+    --vs-info: #22d3ee;
+    --vs-info-soft: rgba(34, 211, 238, 0.12);
+    --vs-topbar-h: 56px;
+    --vs-radius-sm: 8px;
+    --vs-radius-md: 10px;
+    --vs-radius-lg: 12px;
+    --vs-radius-xl: 16px;
+    --vs-radius-2xl: 18px;
+    --vs-radius-pill: 999px;
+    --vs-transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    --vs-on-accent: #ffffff;
+    --vs-active-indicator-radius: 0 3px 3px 0;
+    --vs-sidebar-item-radius: 9px;
+    --vs-control-radius: 10px;
+    --vs-breadcrumb-icon-radius: 5px;
+    --vs-theme-option-radius: 7px;
+    --vs-control-size: 36px;
+    --vs-control-height: 42px;
+    --vs-theme-toggle-size: 28px;
+    --vs-search-width: 240px;
+    --vs-search-width-focus: 300px;
+    --vs-search-width-mobile: 160px;
+    --vs-search-width-mobile-focus: 200px;
+    --vs-dropdown-width: 323px;
+    --vs-user-menu-width: 240px;
+    --vs-notifications-width: 340px;
+    --vs-user-avatar-size: 32px;
+    --vs-user-avatar-lg-size: 38px;
+    --vs-panel-highlight-border: rgba(15, 23, 42, 0.03);
+    --vs-brand-gradient-start: #7b5cf0;
+    --vs-brand-gradient-end: #22d3ee;
+    --vs-avatar-gradient-start: #7b5cf0;
+    --vs-avatar-gradient-end: #22d3ee;
+    --vs-tooltip-bg: linear-gradient(180deg, rgba(251, 252, 254, 0.98), rgba(241, 245, 249, 0.96));
+    --vs-tooltip-border: rgba(15, 23, 42, 0.08);
+    --vs-tooltip-text: #2f4055;
+    --vs-tooltip-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+    --vs-tooltip-arrow: #f1f5f9;
+    --vs-panel-surface: color-mix(in srgb, var(--vs-surface-1) 94%, white);
+    --vs-control-bg: color-mix(in srgb, var(--vs-surface-2) 84%, white);
+    --vs-control-bg-hover: color-mix(in srgb, var(--vs-surface-3) 88%, white);
+    --vs-control-bg-active: color-mix(in srgb, var(--vs-surface-4) 92%, white);
+    --vs-muted-surface: color-mix(in srgb, var(--vs-surface-2) 70%, transparent);
+    --vs-muted-surface-hover: color-mix(in srgb, var(--vs-surface-3) 78%, transparent);
+}
+
+html {
+    color-scheme: light;
+}
+
+html.dark {
+    color-scheme: dark;
+    --vs-bg: #05070f;
+    --vs-bg-rgb: 5 7 15;
+    --vs-surface-1: #0b0f1e;
+    --vs-surface-2: #111629;
+    --vs-surface-3: #181e35;
+    --vs-surface-4: #1e2540;
+    --vs-surface-5: #293152;
+    --vs-border: rgba(255, 255, 255, 0.08);
+    --vs-border-strong: rgba(255, 255, 255, 0.14);
+    --vs-shadow: 0 26px 70px rgba(0, 0, 0, 0.52);
+    --vs-shadow-soft: 0 16px 34px rgba(0, 0, 0, 0.3);
+    --vs-shadow-card: 0 18px 40px rgba(0, 0, 0, 0.34);
+    --vs-text: #f1f5ff;
+    --vs-text-2: #b7bfd6;
+    --vs-text-3: #7e88a3;
+    --vs-text-4: rgba(183, 191, 214, 0.56);
+    --vs-accent-2: #a78bfa;
+    --vs-panel-highlight-border: rgba(255, 255, 255, 0.04);
+    --vs-tooltip-bg: linear-gradient(180deg, rgba(18, 24, 38, 0.98), rgba(7, 10, 18, 0.96));
+    --vs-tooltip-border: rgba(123, 92, 240, 0.18);
+    --vs-tooltip-text: #e8eefb;
+    --vs-tooltip-shadow: 0 24px 56px rgba(0, 0, 0, 0.42);
+    --vs-tooltip-arrow: #101726;
+    --vs-panel-surface: color-mix(in srgb, var(--vs-surface-1) 96%, transparent);
+    --vs-control-bg: color-mix(in srgb, var(--vs-surface-2) 84%, transparent);
+    --vs-control-bg-hover: color-mix(in srgb, var(--vs-surface-3) 88%, transparent);
+    --vs-control-bg-active: color-mix(in srgb, var(--vs-surface-4) 92%, transparent);
+    --vs-muted-surface: rgba(255, 255, 255, 0.04);
+    --vs-muted-surface-hover: rgba(255, 255, 255, 0.08);
+}
+
+::selection {
+    background: rgba(123, 92, 240, 0.2);
+    color: var(--vs-text);
+}
+
+[data-tippy-root] {
+    z-index: 80;
+}
+
+.tippy-box,
+.tippy-box[data-theme~='light'],
+.tippy-box[data-theme~='dark'] {
+    max-width: min(20rem, calc(100vw - 1rem));
+    overflow: hidden;
+    border: 1px solid var(--vs-tooltip-border);
+    border-radius: var(--vs-radius-lg);
+    background: var(--vs-tooltip-bg);
+    color: var(--vs-tooltip-text);
+    box-shadow:
+        var(--vs-tooltip-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    font-size: 11.5px;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+}
+
+.tippy-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgb(var(--vs-accent-rgb) / 0.16), transparent 48%);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.tippy-box > .tippy-arrow {
+    color: var(--vs-tooltip-arrow);
+}
+
+.tippy-content {
+    position: relative;
+    z-index: 1;
+    padding: 10px 12px;
+    font-weight: 500;
+}
+
+.tippy-content :is(strong, b) {
+    color: var(--vs-tooltip-text);
+    font-weight: 700;
+}
+
+.fi-body {
+    background:
+        radial-gradient(circle at top right, rgb(var(--vs-accent-rgb) / 0.07), transparent 28rem),
+        var(--vs-bg);
+    color: var(--vs-text);
+    font-family: var(--font-family);
+    font-size: 13.5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.fi-body ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.fi-body ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.fi-body ::-webkit-scrollbar-thumb {
+    border-radius: var(--vs-radius-pill);
+    background: var(--vs-surface-4);
+}
+
+.fi-layout,
+.fi-main,
+.fi-main-ctn,
+.fi-main-ctn > * {
+    min-width: 0;
+}
+
+.fi-main {
+    padding-bottom: 1.5rem;
+}
+
+.fi-loading-indicator,
+.fi-icon {
+    transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
+}
+
+.fi-loading-indicator {
+    color: var(--vs-text-3);
+}
