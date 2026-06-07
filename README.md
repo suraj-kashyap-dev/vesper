@@ -1,6 +1,13 @@
 # Vesper
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/suraj-kashyap-dev/vesper.svg?style=flat-square)](https://packagist.org/packages/suraj-kashyap-dev/vesper)
+[![Total Downloads](https://img.shields.io/packagist/dt/suraj-kashyap-dev/vesper.svg?style=flat-square)](https://packagist.org/packages/suraj-kashyap-dev/vesper)
+[![License](https://img.shields.io/packagist/l/suraj-kashyap-dev/vesper.svg?style=flat-square)](https://packagist.org/packages/suraj-kashyap-dev/vesper)
+[![PHP Version](https://img.shields.io/packagist/php-v/suraj-kashyap-dev/vesper.svg?style=flat-square)](https://packagist.org/packages/suraj-kashyap-dev/vesper)
+
 Vesper is a Composer-installable Filament 5 theme plugin with premium-style runtime customization. It supports preset-driven palettes, semantic Filament colors, runtime CSS token overrides, configurable layout behavior, and package-owned Blade overrides for the shell.
+
+The package is published on Packagist: **[suraj-kashyap-dev/vesper](https://packagist.org/packages/suraj-kashyap-dev/vesper)**.
 
 ## Install
 
