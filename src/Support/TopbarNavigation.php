@@ -6,6 +6,7 @@ use Filament\Facades\Filament;
 use Filament\Navigation\NavigationItem;
 use Filament\Support\Icons\Heroicon;
 use Illuminate\Support\Str;
+use Kashyap\Vesper\VesperPlugin;
 
 class TopbarNavigation
 {
@@ -13,7 +14,7 @@ class TopbarNavigation
     {
         [$group, $item, $parentItem] = static::findActiveNavigation();
 
-        $brandLabel = config('vesper.branding.name');
+        $brandLabel = VesperPlugin::current()?->getBranding('name');
 
         if (blank($brandLabel)) {
             $brandLabel = trim(strip_tags((string) Filament::getBrandName()));

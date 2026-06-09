@@ -6,10 +6,11 @@
         $isSidebarFullyCollapsibleOnDesktop = filament()->isSidebarFullyCollapsibleOnDesktop();
         $hasTopbar = filament()->hasTopbar();
         $hasTopNavigation = filament()->hasTopNavigation();
-        $brandName = config('vesper.branding.name');
-        $brandEyebrow = config('vesper.branding.eyebrow', 'Admin Panel');
-        $brandMark = config('vesper.branding.mark');
-        $sidebarOverviewLabel = config('vesper.sidebar.overview_label', 'Overview');
+        $vesper = \Kashyap\Vesper\VesperPlugin::current();
+        $brandName = $vesper?->getBranding('name');
+        $brandEyebrow = $vesper?->getBranding('eyebrow') ?? 'Admin Panel';
+        $brandMark = $vesper?->getBranding('mark');
+        $sidebarOverviewLabel = $vesper?->getSidebar('overview_label') ?? 'Overview';
         $isGlobalSearchInSidebar = filament()->isGlobalSearchEnabled() && filament()->getGlobalSearchPosition() === \Filament\Enums\GlobalSearchPosition::Sidebar;
         $isNotificationsInSidebar = filament()->auth()->check() && filament()->hasDatabaseNotifications() && filament()->getDatabaseNotificationsPosition() === \Filament\Enums\DatabaseNotificationsPosition::Sidebar;
         $isUserMenuInSidebar = filament()->auth()->check() && filament()->hasUserMenu() && filament()->getUserMenuPosition() === \Filament\Enums\UserMenuPosition::Sidebar;

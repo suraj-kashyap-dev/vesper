@@ -8,28 +8,61 @@ use Kashyap\Vesper\Support\Configuration\PanelOptionsResolver;
 use Kashyap\Vesper\Support\Configuration\ResolvedThemeFactory;
 use Kashyap\Vesper\Support\Configuration\ThemeModeResolver;
 use Kashyap\Vesper\Support\Configuration\ThemeSectionMerger;
+use Kashyap\Vesper\VesperPlugin;
 
 class ThemeConfiguration
 {
-    public static function resolve(): array
+    /**
+     * @param  array<string, mixed>|null  $theme
+     * @return array<string, mixed>
+     */
+    public static function resolve(?array $theme = null): array
     {
         return (new ResolvedThemeFactory(new ThemeSectionMerger))
-            ->build(config('vesper', []));
+            ->build(static::themeDefinition($theme));
     }
 
-    public static function resolvePanelOptions(): array
+    /**
+     * @param  array<string, mixed>|null  $theme
+     * @return array<string, mixed>
+     */
+    public static function resolvePanelOptions(?array $theme = null): array
     {
         return (new PanelOptionsResolver(new ThemeModeResolver))
-            ->resolve(static::resolve()[ThemeConfigSection::Layout->value]);
+            ->resolve(static::resolve($theme)[ThemeConfigSection::Layout->value]);
     }
 
-    public static function resolveSemanticColors(): array
+    /**
+     * @param  array<string, mixed>|null  $theme
+     * @return array<string, mixed>
+     */
+    public static function resolveSemanticColors(?array $theme = null): array
     {
-        return static::resolve()[ThemeConfigSection::Colors->value];
+        return static::resolve($theme)[ThemeConfigSection::Colors->value];
     }
 
-    public static function resolveCssVariableSections(): array
+    /**
+     * @param  array<string, mixed>|null  $theme
+     * @return array<string, mixed>
+     */
+    public static function resolveCssVariableSections(?array $theme = null): array
     {
-        return (new CssVariableResolver)->resolve(static::resolve());
+        return (new CssVariableResolver)->resolve(static::resolve($theme));
+    }
+
+    /**
+     * Resolve the theme definition to build from: an explicitly passed array,
+     * the current panel's plugin, or a fresh plugin honoring published config.
+     *
+     * @param  array<string, mixed>|null  $theme
+     * @return array<string, mixed>
+     */
+    protected static function themeDefinition(?array $theme): array
+    {
+        if ($theme !== null) {
+            return $theme;
+        }
+
+        return (VesperPlugin::current() ?? VesperPlugin::make())->toThemeArray();
     }
 }

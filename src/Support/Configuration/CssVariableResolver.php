@@ -3,12 +3,12 @@
 namespace Kashyap\Vesper\Support\Configuration;
 
 use BackedEnum;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Kashyap\Vesper\Enums\ThemeConfigSection;
 use Kashyap\Vesper\Enums\ThemeFontSlot;
 use Kashyap\Vesper\Enums\ThemePreset;
 use Kashyap\Vesper\Enums\ThemeTokenSection;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 
 class CssVariableResolver
 {

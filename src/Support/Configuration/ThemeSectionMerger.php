@@ -2,9 +2,9 @@
 
 namespace Kashyap\Vesper\Support\Configuration;
 
+use Illuminate\Support\Arr;
 use Kashyap\Vesper\Enums\ThemeConfigSection;
 use Kashyap\Vesper\Enums\ThemeTokenSection;
-use Illuminate\Support\Arr;
 
 class ThemeSectionMerger
 {

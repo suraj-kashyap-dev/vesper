@@ -8,7 +8,9 @@ return [
     'theme_id' => 'vesper',
     'theme_asset' => 'vesper.css',
     'override_filament_panels_views' => true,
-    'preset' => ThemePreset::Sunset->value, // Emerald, Sunset, Amethyst, Burgundy, Champagne, Obsidian, Platinum, Sapphire
+
+    'preset' => ThemePreset::Sunset->value,
+
     'layout' => [
         'default_theme_mode' => ThemeMode::System,
         'top_navigation' => false,
@@ -23,35 +25,32 @@ return [
         'max_content_width' => Width::Full,
         'simple_page_max_content_width' => null,
     ],
+
     'fonts' => [
         'body' => "'Plus Jakarta Sans', sans-serif",
         'mono' => "'Geist Mono', monospace",
         'heading' => "'Space Grotesk', sans-serif",
         'stylesheet' => 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap',
     ],
+
     'branding' => [
-        'name' => 'Suraj Kashyap',
-        'eyebrow' => 'A theme by Suraj Kashyap',
-        'mark' => 'SK',
+        'name' => null,
+        'eyebrow' => 'Admin Panel',
+        'mark' => null,
     ],
+
     'header' => [
-        'help_url' => 'https://filamentphp.com/docs',
+        'help_url' => null,
+        'show_help_url' => true,
         'show_theme_toggle' => true,
     ],
+
     'sidebar' => [
         'overview_label' => 'Overview',
         'user_role' => 'Administrator',
     ],
+
     'colors' => [],
-    'tokens' => require __DIR__.'/vesper/tokens.php',
-    'presets' => [
-        ThemePreset::Emerald->value => require __DIR__.'/vesper/presets/emerald.php',
-        ThemePreset::Sunset->value => require __DIR__.'/vesper/presets/sunset.php',
-        ThemePreset::Amethyst->value => require __DIR__.'/vesper/presets/amethyst.php',
-        ThemePreset::Burgundy->value => require __DIR__.'/vesper/presets/burgundy.php',
-        ThemePreset::Champagne->value => require __DIR__.'/vesper/presets/champagne.php',
-        ThemePreset::Obsidian->value => require __DIR__.'/vesper/presets/obsidian.php',
-        ThemePreset::Platinum->value => require __DIR__.'/vesper/presets/platinum.php',
-        ThemePreset::Sapphire->value => require __DIR__.'/vesper/presets/sapphire.php',
-    ],
+
+    'tokens' => [],
 ];

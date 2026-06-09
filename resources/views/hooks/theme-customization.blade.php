@@ -1,5 +1,9 @@
 @php
-    $themeConfiguration = \Kashyap\Vesper\Support\ThemeConfiguration::resolveCssVariableSections();
+    $plugin ??= \Kashyap\Vesper\VesperPlugin::current();
+
+    $themeConfiguration = \Kashyap\Vesper\Support\ThemeConfiguration::resolveCssVariableSections(
+        $plugin?->toThemeArray(),
+    );
 
     $rootDeclarations = collect($themeConfiguration['root'])
         ->map(fn (string $value, string $property): string => "{$property}: {$value};")

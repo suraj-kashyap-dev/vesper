@@ -1,8 +1,9 @@
 <div class="fi-topbar-ctn">
     @php
-        $brandName = config('vesper.branding.name');
-        $brandEyebrow = config('vesper.branding.eyebrow', 'Admin Panel');
-        $brandMark = config('vesper.branding.mark');
+        $vesper = \Kashyap\Vesper\VesperPlugin::current();
+        $brandName = $vesper?->getBranding('name');
+        $brandEyebrow = $vesper?->getBranding('eyebrow') ?? 'Admin Panel';
+        $brandMark = $vesper?->getBranding('mark');
         $isRtl = __('filament-panels::layout.direction') === 'rtl';
         $isSidebarCollapsibleOnDesktop = filament()->isSidebarCollapsibleOnDesktop();
         $isSidebarFullyCollapsibleOnDesktop = filament()->isSidebarFullyCollapsibleOnDesktop();
@@ -15,8 +16,8 @@
         $isNotificationsInTopbar = filament()->auth()->check() && filament()->hasDatabaseNotifications() && filament()->getDatabaseNotificationsPosition() === \Filament\Enums\DatabaseNotificationsPosition::Topbar;
         $isUserMenuInTopbar = filament()->auth()->check() && filament()->hasUserMenu() && filament()->getUserMenuPosition() === \Filament\Enums\UserMenuPosition::Topbar;
         $hasThemeToggle = filament()->hasDarkMode() && (! filament()->hasDarkModeForced());
-        $showThemeToggle = config('vesper.header.show_theme_toggle', true) && $hasThemeToggle;
-        $helpUrl = config('vesper.header.help_url');
+        $showThemeToggle = ($vesper?->showThemeToggle() ?? true) && $hasThemeToggle;
+        $helpUrl = $vesper?->getHelpUrl();
         $showTenantMenuInNavigation = $shouldRenderTopNavigation && $hasTenancy && filament()->hasTenantMenu();
         $showTenantMenuInActions = (! $shouldRenderTopNavigation) && $hasTenancy && filament()->hasTenantMenu();
         $showSecondaryActions = $isNotificationsInTopbar || filled($helpUrl) || $showTenantMenuInActions;

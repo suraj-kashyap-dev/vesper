@@ -3,9 +3,9 @@
 namespace Kashyap\Vesper\Support\Configuration;
 
 use BackedEnum;
+use Illuminate\Support\Arr;
 use Kashyap\Vesper\Enums\ThemeConfigSection;
 use Kashyap\Vesper\Enums\ThemePreset;
-use Illuminate\Support\Arr;
 
 class ThemePresetCatalog
 {

@@ -5,9 +5,10 @@
 ])
 
 @php
-    $brandName = config('vesper.branding.name');
-    $brandEyebrow = config('vesper.branding.eyebrow', 'Admin Panel');
-    $brandMark = config('vesper.branding.mark');
+    $vesper = \Kashyap\Vesper\VesperPlugin::current();
+    $brandName = $vesper?->getBranding('name');
+    $brandEyebrow = $vesper?->getBranding('eyebrow') ?? 'Admin Panel';
+    $brandMark = $vesper?->getBranding('mark');
 
     if (blank($brandName)) {
         $brandName = trim(strip_tags((string) filament()->getBrandName()));

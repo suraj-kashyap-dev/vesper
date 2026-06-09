@@ -17,7 +17,8 @@
     $userEmail = data_get($user, 'email');
     $userRole = data_get($user, 'role')
         ?? data_get($user, 'role.name')
-        ?? config('vesper.sidebar.user_role', 'Administrator');
+        ?? \Kashyap\Vesper\VesperPlugin::current()?->getSidebar('user_role')
+        ?? 'Administrator';
 @endphp
 
 {{ \Filament\Support\Facades\FilamentView::renderHook(\Filament\View\PanelsRenderHook::USER_MENU_BEFORE) }}

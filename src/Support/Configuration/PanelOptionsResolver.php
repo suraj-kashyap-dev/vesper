@@ -2,8 +2,8 @@
 
 namespace Kashyap\Vesper\Support\Configuration;
 
-use Kashyap\Vesper\Enums\ThemeLayoutOption;
 use Illuminate\Support\Arr;
+use Kashyap\Vesper\Enums\ThemeLayoutOption;
 
 class PanelOptionsResolver
 {
