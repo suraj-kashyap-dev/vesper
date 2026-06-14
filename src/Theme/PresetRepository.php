@@ -7,6 +7,7 @@ use Kashyap\Vesper\Theme\Contracts\Preset;
 use Kashyap\Vesper\Theme\Presets\AmethystPreset;
 use Kashyap\Vesper\Theme\Presets\BurgundyPreset;
 use Kashyap\Vesper\Theme\Presets\ChampagnePreset;
+use Kashyap\Vesper\Theme\Presets\CobaltPreset;
 use Kashyap\Vesper\Theme\Presets\EmeraldPreset;
 use Kashyap\Vesper\Theme\Presets\ObsidianPreset;
 use Kashyap\Vesper\Theme\Presets\PlatinumPreset;
@@ -43,6 +44,7 @@ class PresetRepository
             new ObsidianPreset,
             new PlatinumPreset,
             new SapphirePreset,
+            new CobaltPreset,
         ];
     }
 

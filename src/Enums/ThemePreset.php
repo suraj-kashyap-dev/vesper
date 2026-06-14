@@ -12,6 +12,7 @@ enum ThemePreset: string
     case Obsidian = 'obsidian';
     case Platinum = 'platinum';
     case Sapphire = 'sapphire';
+    case Cobalt = 'cobalt';
 
     public static function fallback(): self
     {

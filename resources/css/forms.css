@@ -15,10 +15,10 @@
 }
 
 .fi-fo-field-label {
-    color: var(--vs-text-3);
-    font-size: 11px;
+    color: var(--vs-text-2);
+    font-size: 11.5px;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 

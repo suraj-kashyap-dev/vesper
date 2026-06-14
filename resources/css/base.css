@@ -86,22 +86,22 @@ html {
 
 html.dark {
     color-scheme: dark;
-    --vs-bg: #05070f;
-    --vs-bg-rgb: 5 7 15;
-    --vs-surface-1: #0b0f1e;
-    --vs-surface-2: #111629;
-    --vs-surface-3: #181e35;
-    --vs-surface-4: #1e2540;
-    --vs-surface-5: #293152;
-    --vs-border: rgba(255, 255, 255, 0.08);
-    --vs-border-strong: rgba(255, 255, 255, 0.14);
-    --vs-shadow: 0 26px 70px rgba(0, 0, 0, 0.52);
-    --vs-shadow-soft: 0 16px 34px rgba(0, 0, 0, 0.3);
-    --vs-shadow-card: 0 18px 40px rgba(0, 0, 0, 0.34);
-    --vs-text: #f1f5ff;
-    --vs-text-2: #b7bfd6;
-    --vs-text-3: #7e88a3;
-    --vs-text-4: rgba(183, 191, 214, 0.56);
+    --vs-bg: #15161a;
+    --vs-bg-rgb: 21 22 26;
+    --vs-surface-1: #1b1c21;
+    --vs-surface-2: #212329;
+    --vs-surface-3: #2a2c33;
+    --vs-surface-4: #33353d;
+    --vs-surface-5: #3d3f48;
+    --vs-border: rgba(255, 255, 255, 0.07);
+    --vs-border-strong: rgba(255, 255, 255, 0.13);
+    --vs-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    --vs-shadow-soft: 0 16px 32px rgba(0, 0, 0, 0.38);
+    --vs-shadow-card: 0 18px 40px rgba(0, 0, 0, 0.3);
+    --vs-text: #e7e8ec;
+    --vs-text-2: #bbbec8;
+    --vs-text-3: #8d909d;
+    --vs-text-4: rgba(187, 190, 200, 0.6);
     --vs-accent-2: #a78bfa;
     --vs-panel-highlight-border: rgba(255, 255, 255, 0.04);
     --vs-tooltip-bg: linear-gradient(180deg, rgba(18, 24, 38, 0.98), rgba(7, 10, 18, 0.96));
